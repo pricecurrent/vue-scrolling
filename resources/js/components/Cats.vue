@@ -64,7 +64,7 @@
 
             document.addEventListener('scroll', delayedHandler)
             this.$once('hook:destroyed', () => {
-                document.removeEventHandler('scroll', delayedHandler)
+                document.removeEventListener('scroll', delayedHandler)
             })
         }
     }
