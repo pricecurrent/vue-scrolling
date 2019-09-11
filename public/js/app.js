@@ -1871,6 +1871,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['cat'],
   data: function data() {
@@ -19641,65 +19645,115 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "flex flex-col justify-end" }, [
+        _c("button", [
+          _c(
+            "svg",
+            {
+              staticClass: "stroke-current text-indigo-600 w-6",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                width: "24",
+                height: "24",
+                viewBox: "0 0 24 24",
+                fill: "none",
+                stroke: "currentColor",
+                "stroke-width": "2",
+                "stroke-linecap": "round",
+                "stroke-linejoin": "round"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                }
+              })
+            ]
+          )
+        ])
+      ])
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "mt-6" }, [
       _c("div", [
-        _c("input", {
-          directives: [
+        _c("div", { staticClass: "relative" }, [
+          _c(
+            "div",
             {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.body,
-              expression: "body"
-            }
-          ],
-          staticClass:
-            "w-full rounded text-sm border outline-none border-indigo-200 px-3 py-2",
-          attrs: { placeholder: "What do you think of this cat?" },
-          domProps: { value: _vm.body },
-          on: {
-            keyup: function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.postComment($event)
+              staticClass:
+                "absolute flex flex-col justify-center right-0 h-full px-4"
             },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+            [
+              _c("button", [
+                _c(
+                  "svg",
+                  {
+                    staticClass:
+                      "w-4 stroke-current text-indigo-500 hover:text-indigo-700",
+                    attrs: {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      width: "24",
+                      height: "24",
+                      viewBox: "0 0 24 24",
+                      fill: "none",
+                      stroke: "currentColor",
+                      "stroke-width": "2",
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round"
+                    }
+                  },
+                  [
+                    _c("line", {
+                      attrs: { x1: "22", y1: "2", x2: "11", y2: "13" }
+                    }),
+                    _c("polygon", {
+                      attrs: { points: "22 2 15 22 11 13 2 9 22 2" }
+                    })
+                  ]
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.body,
+                expression: "body"
               }
-              _vm.body = $event.target.value
+            ],
+            staticClass:
+              "border border-indigo-200  hover:bg-indigo-100 focus:bg-indigo-100 outline-none pr-12 px-3 py-2 rounded text-sm w-full",
+            attrs: { placeholder: "What do you think of this cat?" },
+            domProps: { value: _vm.body },
+            on: {
+              keyup: function($event) {
+                if (
+                  !$event.type.indexOf("key") &&
+                  _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                ) {
+                  return null
+                }
+                return _vm.postComment($event)
+              },
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.body = $event.target.value
+              }
             }
-          }
-        })
+          })
+        ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex flex-col justify-end" }, [
-      _c(
-        "button",
-        {
-          staticClass:
-            "text-indigo-600 font-semibold text-sm p-1 rounded shadow-sm"
-        },
-        [_vm._v("\n                take this one\n            ")]
-      ),
-      _vm._v(" "),
-      _c("button", [_vm._v("comment")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -19735,7 +19789,7 @@ var render = function() {
           }
         },
         _vm._l(_vm.cats, function(cat) {
-          return _c("cat", { attrs: { cat: cat } })
+          return _c("cat", { key: cat.id, attrs: { cat: cat } })
         }),
         1
       ),
@@ -32014,15 +32068,14 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*!*****************************************!*\
   !*** ./resources/js/components/Cat.vue ***!
   \*****************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Cat_vue_vue_type_template_id_36d43cbb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cat.vue?vue&type=template&id=36d43cbb& */ "./resources/js/components/Cat.vue?vue&type=template&id=36d43cbb&");
 /* harmony import */ var _Cat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cat.vue?vue&type=script&lang=js& */ "./resources/js/components/Cat.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Cat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Cat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -32052,7 +32105,7 @@ component.options.__file = "resources/js/components/Cat.vue"
 /*!******************************************************************!*\
   !*** ./resources/js/components/Cat.vue?vue&type=script&lang=js& ***!
   \******************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

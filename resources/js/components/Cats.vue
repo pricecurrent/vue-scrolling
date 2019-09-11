@@ -1,7 +1,7 @@
 <template>
     <div class="w-3/5 mx-auto">
         <scrollable @at-the-bottom="fetch(cats.length)">
-            <cat v-for="cat in cats" :cat="cat"></cat>
+            <cat v-for="cat in cats" :cat="cat" :key="cat.id"></cat>
         </scrollable>
 
         <div v-show="loading">
