@@ -7,10 +7,20 @@ use Illuminate\Http\Request;
 
 class CatCommentsController extends Controller
 {
+    public function index(Cat $cat)
+    {
+        $comments = $cat->comments()->parent()->with('replies')->get();
+
+        return response()->json($comments);
+    }
+
     public function store(Request $request, Cat $cat)
     {
-        $cat->comments()->create([
+        $comment = $cat->comments()->create([
+            'parent_id' => $request->parent_id,
             'body' => $request->body,
         ]);
+
+        return response()->json($comment);
     }
 }
